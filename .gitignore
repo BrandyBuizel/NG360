@@ -1,8 +1,4 @@
 Export/
 Library/
-Assets\Resources\01
-Assets\Resources\02
-Assets\Resources\03
-Assets\Resources\04
-Assets\Resources\05
-Assets\Resources\06
+*.jpg
+*.jpg.meta
