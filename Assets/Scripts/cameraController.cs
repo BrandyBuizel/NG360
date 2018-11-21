@@ -7,12 +7,13 @@ public class cameraController : MonoBehaviour {
     private float y;
     private Vector3 rotateValue;
 
+    GameObject character;
+
     Vector2 mouseLook;
     Vector2 smoothV;
-    public float sensitivity = 1.0f;
+    public float sensitivity = 0.5f;
     public float smoothing = 1.0f;
-    GameObject character;
-    public float speed = 180.0f;
+    public float speed = 128.0f;
  
     void Update()
     {
@@ -21,23 +22,30 @@ public class cameraController : MonoBehaviour {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
 
-            /*
-            y = Input.GetAxis("Mouse X");
-            x = Input.GetAxis("Mouse Y");
+            //y = Input.GetAxis("Mouse X");
+            //x = Input.GetAxis("Mouse Y");
 
-            Debug.Log(x + ":" + y);
-            rotateValue = new Vector3(x, y * -1, 0);
-            transform.eulerAngles = transform.eulerAngles - (rotateValue * 2);
-            */
-
+            //Debug.Log(x + ":" + y);
+            //y = Mathf.Clamp(y,-90f,90f);
+            //rotateValue = new Vector3(x, 0, 0);
+            //transform.eulerAngles = transform.eulerAngles - (rotateValue * 3);
+            
             var md = new Vector2(Input.GetAxisRaw("Mouse X"), Input.GetAxisRaw("Mouse Y"));
 
-            md = Vector2.Scale(md, new Vector2(sensitivity * smoothing, sensitivity * smoothing));
-            smoothV.x = Mathf.Lerp(smoothV.x, md.x, 1f /smoothing);
+            md = Vector2.Scale(md, new Vector2(0, sensitivity * smoothing));
+            //smoothV.x = Mathf.Lerp(smoothV.x, md.x, 1f /smoothing);
             smoothV.y = Mathf.Lerp(smoothV.y, md.y, 1f /smoothing);
             mouseLook += smoothV;
             mouseLook.y = Mathf.Clamp(mouseLook.y,-90f,90f);
 
+            //transform.localRotation = Quaternion.AngleAxis(mouseLook.x, Vector3.up);
+            //transform.localRotation = Quaternion.AngleAxis(-mouseLook.y, Vector3.right);
+            //transform.localRotation *= Quaternion.Euler (0f, mouseLook.y, 0f);
+            //transform.localRotation *= Quaternion.Euler (-mouseLook.x, 0f, 0f);
+
+            x = Input.GetAxis("Mouse X");
+            rotateValue = new Vector3(0, -x, 0);
+            transform.eulerAngles = transform.eulerAngles - (rotateValue * 3);
             transform.localRotation = Quaternion.AngleAxis(-mouseLook.y, Vector3.right);
         }else{
             Cursor.lockState = CursorLockMode.None;
