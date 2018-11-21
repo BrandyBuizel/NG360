@@ -856,6 +856,7 @@ GameObject:
   - component: {fileID: 1841350169}
   - component: {fileID: 1841350168}
   - component: {fileID: 1841350166}
+  - component: {fileID: 1841350170}
   - component: {fileID: 1841350167}
   m_Layer: 0
   m_Name: Main Camera
@@ -879,11 +880,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1841350165}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a72286afbe08af2419e6db49c86918e9, type: 3}
+  m_Script: {fileID: 11500000, guid: 37e60a97f2c87ae41b6cdc1055d78cb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sensitivity: 5
-  smoothing: 2
+  axes: 0
+  sensitivityX: 4
+  sensitivityY: 5
+  minimumY: -90
+  maximumY: 90
 --- !u!20 &1841350168
 Camera:
   m_ObjectHideFlags: 0
@@ -933,6 +937,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1841350170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1841350165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a72286afbe08af2419e6db49c86918e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sensitivity: 0.5
+  smoothing: 1
+  speed: 120
 --- !u!1001 &2079581786
 Prefab:
   m_ObjectHideFlags: 0

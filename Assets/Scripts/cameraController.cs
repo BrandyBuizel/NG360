@@ -13,12 +13,12 @@ public class cameraController : MonoBehaviour {
     Vector2 smoothV;
     public float sensitivity = 0.5f;
     public float smoothing = 1.0f;
-    public float speed = 128.0f;
+    public float speed = 120.0f;
  
     void Update()
     {
         //Mouse Controls
-        if(Input.GetMouseButton(0)){
+        /*if(Input.GetMouseButton(0)){
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
 
@@ -50,7 +50,7 @@ public class cameraController : MonoBehaviour {
         }else{
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
-        }
+        }*/
 
         //Keyboard
         if(Input.GetKey(KeyCode.DownArrow))
