@@ -4,4 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/NG360Sphere.unity
+    guid: b69bb63a3bda33942b0e8cbe5d631e19
+  m_configObjects: {}
